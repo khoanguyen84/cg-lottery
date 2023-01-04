@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG Huế - Xổ Số Vui Xuân</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="lottery.css">
+</head>
+<body>
+    <div class="container bg-warning display-4">
+        <div class="row align-items-center mb-4">
+            <div class="col-md-3 label">Giải Khuyến khích</div>
+            <div class="col-md-3 kk-1 text-center">---</div>
+            <div class="col-md-3 kk-2 text-center">---</div>
+            <div class="col-md-3 kk-3 text-center">---</div>
+        </div>
+        <div class="row align-items-center mb-4">
+            <div class="col-md-3 label">Giải Ba</div>
+            <div class="col-md-9 gb text-center">---</div>
+        </div>
+        <div class="row align-items-center mb-4">
+            <div class="col-md-3 label">Giải Nhì</div>
+            <div class="col-md-9 gn text-center">---</div>
+        </div>
+        <div class="row align-items-center mb-4">
+            <div class="col-md-3 label">Giải Đặc biệt</div>
+            <div class="col-md-9 gdb text-center">---</div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-3 label"></div>
+            <div class="col-md-9 gdb text-center">
+                <button class="btn btn-lg btn-warning run" onclick="runLottery()">Quay Số</button>
+                <button class="btn btn-lg btn-dark re-run" onclick="reRun()">Quay lại</button>
+                <button class="btn btn-lg btn-warning init d-none" onclick="initRun()">Quay lại từ đầu</button>
+            </div>
+        </div>
+    </div>
+    <script src="lottery.js"></script>
+</body>
+</html>
