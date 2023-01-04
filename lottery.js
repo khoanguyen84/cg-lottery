@@ -26,7 +26,7 @@ var win = [
 
 var slot = 0;
 var preSlot = 0;
-var delay = 100;
+var delay = 120;
 function runLottery() {
     process(document.querySelector(win[slot].element, slot));
     preSlot = slot;
@@ -90,8 +90,14 @@ function initReRunLotery(preSlot) {
 
 
 function initRun(){
-    window.location.href = "/"
+    if(window.location.href.split("/").pop() == "cg-lottery"){
+        window.location.href = "/cg-lottery"
+    }
+    else{
+        window.location.href = "/"
+    }
 }
+
 (() => {
     initRunLotery(0);
 })()
