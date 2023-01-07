@@ -26,7 +26,9 @@ var win = [
 
 var slot = 0;
 var preSlot = 0;
-var delay = 120;
+var delay = 1;
+var timeout = 100;
+
 function runLottery() {
     process(document.querySelector(win[slot].element, slot));
     preSlot = slot;
@@ -38,15 +40,17 @@ function reRun() {
 }
 
 function process(element) {
+    document.querySelector('.run').classList.add('disabled');
     var timesRun = 0;
     var interval = setInterval(() => {
         element.innerText = generateNumber();
         timesRun += 1;
         if (timesRun === delay) {
             clearInterval(interval);
+            document.querySelector('.run').classList.remove('disabled');
             initRunLotery(slot);
         }
-    }, 50)
+    }, timeout)
 }
 
 function reProcess(element) {
@@ -58,7 +62,7 @@ function reProcess(element) {
             clearInterval(interval);
             initReRunLotery(preSlot);
         }
-    }, 50)
+    }, timeout)
 }
 
 function generateNumber() {
@@ -84,7 +88,6 @@ function initRunLotery(slot) {
     }
 }
 function initReRunLotery(preSlot) {
-    console.log('preSlot', preSlot);
     document.querySelector('.re-run').innerHTML = `Quay lại ${win[preSlot].name}`;
 }
 
@@ -97,7 +100,6 @@ function initRun(){
         window.location.href = "/"
     }
 }
-
 (() => {
     initRunLotery(0);
 })()
