@@ -26,8 +26,8 @@ var win = [
 
 var slot = 0;
 var preSlot = 0;
-var delay = 1;
-var timeout = 100;
+var delay = 400;
+var timeout = 150;
 
 function runLottery() {
     process(document.querySelector(win[slot].element, slot));
